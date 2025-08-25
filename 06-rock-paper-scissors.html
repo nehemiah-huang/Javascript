@@ -10,12 +10,11 @@
     <button id="rock">Rock</button> 
     <button id="paper">Paper</button>
     <button id="scissors">Scissors</button>
-
-
+    <p id="result"></p>
 
     <script>
         function pickComputerMove() {
-            const randomNumber = Math.random;
+            const randomNumber = Math.random();
 
             if (randomNumber >= 0 && randomNumber < 1 / 3) {
                 return "rock";
@@ -26,7 +25,7 @@
             }
         }
 
-        function playerMove() {
+        function playGame(playerMove) {
             const computerMove = pickComputerMove();
             let result = '';
 
@@ -41,10 +40,14 @@
                 } else {
                 result = "You lose.";
                 }
-                    
-                alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}`); }
+                
+                document.getElementById("result").textContent = `You picked ${playerMove}. Computer picked ${computerMove}. ${result}`;
+ 
+            }
         
-
+        document.getElementById("rock").addEventListener("click", () => playGame("rock"));
+        document.getElementById("paper").addEventListener("click", () => playGame("paper"));
+        document.getElementById("scissors").addEventListener("click", () => playGame("scissors"));
     </script>
 </body>
 </html>
