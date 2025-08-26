@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Coin Flip Game</h1>
+    <div>
+        <button id="head">Heads</button>
+        <button id="tail">Tails</button>
+    </div>
+    <p id="result"></p>
+    
+    <script>
+        function pickComputerMove () {
+            const randomNumber = Math.random();
+
+            if (randomNumber < 1/2) {
+                return "head";
+            } else {
+                return "tail";
+            }
+        }
+        function playGame(playerMove) {
+                const computerMove = pickComputerMove();
+                let result = '';
+
+                if (playerMove === computerMove) {
+                    result = 'You Win!';
+                } else {
+                    result = 'You Lose!';
+                }
+            document.getElementById("result").textContent = `You picked ${playerMove}. Computer picked ${computerMove}. ${result}`;
+            }
+       
+
+        document.getElementById("head").addEventListener("click", () => playGame("head"));
+        document.getElementById("tail").addEventListener("click", () => playGame("tail"));
+        
+    </script>
+</body>
+</html>
