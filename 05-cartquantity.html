@@ -11,29 +11,17 @@
         ">Show Quantity</button>
 
     <button onclick="
-        cartQuantity++;
-        console.log(`Cart quantity: ${cartQuantity}`);
+        if (cartQuantity >= 10) {
+            console.log('Cart is full');
+        } else {
+            cartQuantity += 1;
+            console.log(`Cart quantity: ${cartQuantity}`);
+        }
+
         ">Add to Cart</button>
 
-    <button onclick="
-        cartQuantity += 2;
-        console.log(`Cart quantity: ${cartQuantity}`);
-        ">+2</button>
-
-    <button onclick="
-        cartQuantity += 3;
-        console.log(`Cart quantity: ${cartQuantity}`);
-        ">+3</button>
-    
-      <button onclick="
-        cartQuantity -= 2;
-        console.log(`Cart quantity: ${cartQuantity}`);
-        ">-2</button>
-        
-    <button onclick="
-        cartQuantity -= 3;
-        console.log(`Cart quantity: ${cartQuantity}`);
-        ">-3</button>
+    <button id="add">+2</button>
+    <button id="remove">Remove from cart</button>
 
     <button onclick="
         cartQuantity = 0;
@@ -43,7 +31,22 @@
     <script>
         let cartQuantity = 0;
 
-        console.log(typeof 3);
+        function addCartQuantity() {
+            cartQuantity += 2;
+            console.log(`Cart quantity: ${cartQuantity}`);
+        }
+
+        function removeFromCart() {
+            if (cartQuantity > 0) {
+                cartQuantity -= 1;
+                console.log(`Cart quantity: ${cartQuantity}`);
+            } else {
+                console.log(`Not enough items in cart.`);
+            }
+        }
+
+        document.getElementById("remove").addEventListener("click", removeFromCart);
+        document.getElementById("add").addEventListener("click", addCartQuantity);
     </script>
 </body>
-</html>
+</html>     
