@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function function1() {
+        //     console.log("hello");
+        //     console.log(2+2);
+        // }
+        // function1();
+
+        // function convertMilesToKm(km) {
+        //     return (km * 1.60934);
+        // }
+        // console.log(convertMilesToKm(35));
+
+        // function convertKmToMiles(miles) {
+        //     return (miles * 0.6214);
+        // }
+
+        // function convertLength(length, from, to) {
+        //     if (from === miles && to === km) {
+        //         return convertMilesToKm();
+        //         let result = convertMilesToKm(); 
+        //     } else if (from === km && to === miles) {
+        //         return convertKmToMiles();
+        //         let result = convertKmToMiles();
+        //     }
+        // }
+        // console.log(`Converted ${length}${from} to ${to} is ${result}`);
+
+        function convertMilesToKm(miles) {
+            return miles * 1.60934;
+        }
+        function convertKmToMiles(km) {
+            return km * 0.621371;
+        }
+        function 
+        function convertLength(length, from, to) {
+            if (from === "miles" && to === "km") {
+                return convertMilesToKm(length);
+            } else if (from === "km" && to === "miles") {
+                return convertKmToMiles(length)
+            } else {
+                throw new Error(`Unsupported conversion: ${from} to ${to}`);
+            }
+        } console.log(convertLength(66, "miles", "km"));
+    </script>
+</body>
+</html>
