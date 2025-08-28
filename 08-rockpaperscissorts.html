@@ -19,7 +19,7 @@
 
     <button onclick="
       score.wins = 0;
-      score.losses = 0;
+      score.losses = 0; 
       score.ties = 0">Reset Score</button>
 
     <script>
@@ -28,6 +28,9 @@
             losses: 0,
             ties: 0
         }
+
+        console.log(localStorage.getItem('score')); // gets a item out of local storage
+        
         function playGame(playerMove) {
             const computerMove = pickComputerMove();
 
@@ -69,6 +72,9 @@
                 score.tie = score.ties += 1;
             }
 
+            localStorage.setItem('score', JSON.stringify(score)); // local storage only supports strings so, convert your obj to a string
+            // converts js object score into a string with json stringify
+ 
             alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
             Wins:${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
         }
@@ -88,7 +94,8 @@
 
             return computerMove;
         }
-
+         // first string to to access the value you save later and the second one the value you want to save into local storage
+        // localStorage.setItem to save a value inside localStorage, the .setitem thingy does that
     </script>
   </body>
 </html>
