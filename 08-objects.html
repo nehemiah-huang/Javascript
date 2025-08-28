@@ -9,10 +9,15 @@
     <script>
         const product = {
             name: "Balls",
-            price: 60
+            price: 60,
+            details: {
+                ratings: 5,
+                performance: 4
+            }
         };
 
-        console.log(product);
+        console.log(JSON.stringify(product)); // convert to json format like whats above
+        console.log(JSON.parse( ))
     </script>
 </body>
 </html>
