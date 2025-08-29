@@ -20,17 +20,17 @@
     <button onclick="
       score.wins = 0;
       score.losses = 0; 
-      score.ties = 0">Reset Score</button>
+      score.ties = 0
+      localStorage.removeItem('score');">Reset Score</button>
 
     <script>
-        const score = {
+        let score = JSON.parse(localStorage.getItem('score')) || {
             wins: 0,
             losses: 0,
             ties: 0
-        }
+        }; // the || is to make a default value so it doesnt give a 
+        //  null response after resetting and refreshing the page
 
-        console.log(localStorage.getItem('score')); // gets a item out of local storage
-        
         function playGame(playerMove) {
             const computerMove = pickComputerMove();
 
