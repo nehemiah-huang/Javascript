@@ -6,16 +6,44 @@
     <title>Document</title>
 </head>
 <body>
-<p>Youtube Suscribe Button</p>
-<button class="subscribe" onclick="
-    subscribe();
-">Subscribe</button>
+    <p>Youtube Suscribe Button</p>
+    <button class="subscribe" onclick="
+        subscribe();
+    ">Subscribe</button>
+    <br>
+    <br>
+    <br>
+    <br>
 
-
+    <p id="amazon-Title">Amazon Shipping Calculator</p>
+    <input id="input-calculate" placeholder="Cost of order" onkeydown="
+    handleCostKeydown(event)"> <!--void element because it doesnt need a closing tag-->
+    
+    <button id="calculate" onclick="
+        calculateTotal()
+    ">Calculate</button>
+    <p class="js-total-cost"></p>
 
 
 
     <script>
+        function handleCostKeydown(event) {
+            if (event.key === 'Enter') {
+            calculateTotal();
+            }
+        }
+
+        function calculateTotal() {
+            const inputElement = document.querySelector('#input-calculate');
+            let cost = Number(inputElement.value); //getting the text inside an input element
+
+            if (cost < 40) {
+                cost += 10;
+            }
+
+            document.querySelector('.js-total-cost').innerHTML = `$${cost}`;
+        }
+
         function subscribe() {
             const buttonElement = document.querySelector('.subscribe');
 

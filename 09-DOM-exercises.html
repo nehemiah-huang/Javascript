@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercises</title>
+</head>
+<body>
+    <!--Ex 9a - 9f-->
+    <!-- <button>9a</button><br>
+
+    <button class="second-button">9b</button><br>
+
+    <button class="heads">heads</button>
+    <button class="tails">tails</button>
+    <p class="results"></p><br><br><br><br>
+
+    <input placeholder="Name" id="user-name">
+    <button id="submit">Submit</button>
+    <p id="result"></p> -->
+
+
+
+    <script>
+        // console.log(document.querySelector('button'));
+
+        // document.querySelector('.second-button').innerText = '9b done!';
+
+        // const resultElement = document.querySelector('.result');
+        // document.querySelector('.heads').addEventListener('click', function () {
+        //     resultElement.textContent = 'You chose heads!';
+        // });
+        // document.querySelector('.tails').addEventListener('click', () => {
+        //     resultElement.textContent = 'You chose tails!';
+        // });
+
+        const inputElement = document.querySelector('#user-name');
+        const submitElement = document.querySelector('#submit');
+        const resultSpace =  document.querySelector('#result');
+
+        inputElement.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                resultSpace.innerHTML = `Your name is ${inputElement.value}`;
+            }
+        })
+        submitElement.addEventListener('click', function () {
+            resultSpace.textContent =  `Your name is ${inputElement.value}`;
+        })
+        
+        
+        
+
+    </script>
+</body>
+</html>
