@@ -12,8 +12,24 @@
         <button id="tail">Tails</button>
     </div>
     <p id="result"></p>
+
+    <button onclick="
+        scores = { wins: 0, losses: 0 }; 
+        localStorage.setItem('scores', JSON.stringify(scores));
+        document.getElementById('result').textContent = 'Score reset.';
+        console.clear();
+        console.log(scores);
+        ">
+        Reset Score
+    </button>
+
     
     <script>
+        let scores = JSON.parse(localStorage.getItem('scores')) || {
+            wins: 0,
+            losses: 0,
+        }
+
         function pickComputerMove () {
             const randomNumber = Math.random();
 
@@ -28,13 +44,17 @@
                 let result = '';
 
                 if (playerMove === computerMove) {
+                    scores.wins++;
                     result = 'You Win!';
                 } else {
+                    scores.losses++;
                     result = 'You Lose!';
                 }
+            localStorage.setItem('scores', JSON.stringify(scores));
+            console.table(scores);
             document.getElementById("result").textContent = `You picked ${playerMove}. Computer picked ${computerMove}. ${result}`;
             }
-       
+            
 
         document.getElementById("head").addEventListener("click", () => playGame("head"));
         document.getElementById("tail").addEventListener("click", () => playGame("tail"));
