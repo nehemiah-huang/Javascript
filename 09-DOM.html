@@ -3,12 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>New thing</title>
 </head>
 <body>
-    
+    <button>Hola</button>
+    <button id="Nuts">Nutes</button>
+    <button class="Third">Third</button>
+
     <script>
 
+        console.log(document.querySelector('button'));
+        document.querySelector('#Nuts').innerHTML = 'Naaw';
+        document.querySelector('.Third').innerHTML = 'Second';
+        
+
+        // document.body.innerHTML = 'Hola';
+        // document.title = 'Nuts';
     </script>
 </body>
 </html>

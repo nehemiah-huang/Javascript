@@ -21,9 +21,20 @@
       score.wins = 0;
       score.losses = 0; 
       score.ties = 0
-      localStorage.removeItem('score');">Reset Score</button>
+      localStorage.removeItem('score');">Reset Score</button> <br>
+
+    <p id="score-result"></p>
 
     <script>
+
+                /*
+            function updateScoreElement() {
+                document.querySelector('#result').innerHTML = `Wins: ${score.wins}, Losses:
+                ${score.losses}, Ties: ${score.ties}.`
+            }
+        
+        */
+
         let score = JSON.parse(localStorage.getItem('score')) || {
             wins: 0,
             losses: 0,
@@ -74,9 +85,13 @@
 
             localStorage.setItem('score', JSON.stringify(score)); // local storage only supports strings so, convert your obj to a string
             // converts js object score into a string with json stringify
- 
-            alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
-            Wins:${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+            
+            document.querySelector('#score-result').innerHTML = `You picked ${playerMove}. Computer picked ${computerMove}.<br> ${result}
+            Wins:${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+            
+            // alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
+            // Wins:${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+            // updateScoreElement();
         }
 
         function pickComputerMove() {
