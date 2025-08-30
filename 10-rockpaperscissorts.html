@@ -2,20 +2,34 @@
 <html>
   <head>
     <title>Rock Paper Scissors</title>
+    <style>
+        body {
+            background-color: rgb(25, 25, 25);
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .title {
+            font-weight: bolder;
+            font-size: 30px;
+        }
+        .move-icon {
+            height: 50px;
+        }
+    </style>
   </head>
   <body>
-    <p>Rock Paper Scissors</p>
+    <p class="title">Rock Paper Scissors</p>
     <button onclick="
       playGame('rock');
-    ">Rock</button>
+    "><img src="Images/rock-emoji.png" class="move-icon"></button>
 
     <button onclick="
       playGame('paper');
-    ">Paper</button>
+    "><img src="Images/paper-emoji.png" class="move-icon"></button>
 
     <button onclick="
       playGame('scissors');
-    ">Scissors</button>
+    "><img src="Images/scissors-emoji.png" class="move-icon"></button>
 
     <button onclick="
       score.wins = 0;
