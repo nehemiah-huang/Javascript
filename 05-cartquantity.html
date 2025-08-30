@@ -13,9 +13,11 @@
     <button onclick="
         if (cartQuantity >= 10) {
             console.log('Cart is full');
+            displayCartQuantity();
         } else {
             cartQuantity += 1;
             console.log(`Cart quantity: ${cartQuantity}`);
+            displayCartQuantity();
         }
 
         ">Add to Cart</button>
@@ -25,15 +27,22 @@
 
     <button onclick="
         cartQuantity = 0;
-        console.log('Cart was reset');"
-        >Reset Cart</button>
+        console.log('Cart was reset');
+        displayCartQuantity();"
+        >Reset Cart</button><br>
+
+    <p id="cartQuantity-Result"></p>
 
     <script>
         let cartQuantity = 0;
 
+        function displayCartQuantity() {
+            document.querySelector('#cartQuantity-Result').innerHTML = `Cart Quantity: ${cartQuantity}`;
+        }
         function addCartQuantity() {
             cartQuantity += 2;
             console.log(`Cart quantity: ${cartQuantity}`);
+            displayCartQuantity();
         }
 
         function removeFromCart() {
@@ -42,9 +51,11 @@
                 console.log(`Cart quantity: ${cartQuantity}`);
             } else {
                 console.log(`Not enough items in cart.`);
-            }
-        }
 
+            }
+            displayCartQuantity();
+        }
+        displayCartQuantity();
         document.getElementById("remove").addEventListener("click", removeFromCart);
         document.getElementById("add").addEventListener("click", addCartQuantity);
     </script>
