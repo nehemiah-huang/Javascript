@@ -9,8 +9,22 @@
     
 
     <script>
-        const myArray = [1, 2, 3, 4, 5];
-        console.log(typeof myArray);
+        const myArray = [1, 2, 3, 4, 5]; // the values are also known as index
+        console.log(myArray);
+        
+        // myArray[0] = 99;
+
+        console.log(myArray.length);
+
+        [1, 'hola', true, {name: 'socks'}, [1, 2]];
+
+        console.log(typeof [1,2]);
+        console.log(Array.isArray([1,2]));
+
+        myArray.splice(0, 2) //removes a value from an array, takes two numbers, 
+        // the index and number of values to remove starting from index 0
+
+        console.log(myArray);
         
     </script>
 </body>
