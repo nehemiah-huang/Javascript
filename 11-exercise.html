@@ -7,48 +7,115 @@
 </head>
 <body>
     <script>
-        const listNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        const listNumber = [10, 20, 30, 40, 50];
 
+        // // 11a
+        // listNumber[4] = 99;
+        // console.log(listNumber);
+
+        //11b
+        const lastIndex = '';
+        // function getLastValue(array) {
+        //     let lastIndex = array.length - 1;
+        //     return array[lastIndex];
+        // }
+        // console.log(getLastValue(['a', 'b', 'c', 'd', 'e']));
+
+        //11c 
         /*
-        for (let i = 0; i <= listNumber.length; i++) {
-            listNumber[2] = 99;
+        const firstValue = '';
+        const lastValue = '';
+        function arraySwap(array) {
+            let lastIndex = array.length - 1;
+
+            let firstValue = array[0];
+            let lastValue = array[lastIndex];
+
+            array[0] = lastValue;
+            array[lastIndex] = firstValue;
+
+            return array;
         };
-        */
+        console.log(arraySwap(['a', 'b', 'c', 'd', 'e'])); */
 
-        // const lastIndex = '';
-        // function getLastValue() {
-        //     for (let i = 0; i < listNumber.length; i++) {
-        //         let lastIndex = listNumber.length - 1;
-        //         return listNumber[lastIndex];
-        //     };
-        // };
-        // console.log(getLastValue(listNumber));
-
-        // function arraySwap() {
-        //     for (let i = 0; i < listNumber.length; i++) {
-        //         let lastIndex = listNumber.length - 1;
-        //         const firstValue = listNumber[0];
-        //         const lastValue = listNumber[lastIndex];
-
-        //         listNumber[0] = lastValue;
-        //         listNumber[lastIndex] = firstValue;
-
-        //         return listNumber;
-        //     };
-        // };
-        // console.log(arraySwap(listNumber));
-
-
-        // for (let i = 0; i <= i; i += 2) {
-        //     console.log(listNumber);
-        // }
-        // for (let i = 0; i <= 10; i+=2) {
-        //     console.log(i);
-        // }
-
-        for (let i = 5; i >= 0; i--) {
+        // 11d
+        /*
+        for (let i = 0; i <= 10; i += 2) {
+            if (i > 10) { 
+                break;
+            }
             console.log(i)
+        } */
+       //11e
+       /*
+       for (let i = 5; i >= 0; i--) {
+        if (i < 0 && i > 5) {break}
+        console.log(i)
+       }; */
+
+       //11f
+    //    let i = 0;
+    //    while (i <= 10) {
+    //     console.log(i);
+    //     i += 2;
+    //    }
+
+    //    while (i > 0) {
+    //     console.log(i);
+    //     i--;
+    //    }
+
+        //11g
+        /*
+        for (let i = 0; i < listNumber.length; i++) {
+            let  lastIndex = listNumber[i];
+            lastIndex++;
+            console.log(lastIndex);
+        }; */
+
+        //11h
+        /*
+        function addOne(array) {
+            let newArray = []
+            for (let i = 0; i < array.length; i++) {
+                newArray.push(array[i] + 1);
+            }
+            
+            return newArray;
+        }; 
+        console.log(addOne([1, 2, 3, 4, 5, 6])); */
+
+        //11i
+        /*
+        function addNum(array, num) {
+            let result = [];
+            for (let i = 0; i < array.length; i++) {
+                result.push(array[i] + num);
+            }
+            return result;
         }
+        console.log(addNum([1, 2, 3, 4, 5], 3)); */
+
+        //11j
+        /*
+        function addArrays(array1, array2) {
+            let result = [];
+
+            for (let i = 0; i < array1.length; i++) {
+                result.push(array1[i] + array2[i]);
+            }
+            return result;
+        } 
+        console.log(addArrays([1, 2, 3, 4, 5], [1, 2, 3, 4, 5])); */
+
+        //11k
+        function countPositive(nums) {
+            let result = [];
+            for (let i = 0; i < nums.length; i++) {
+                result.push(nums[i] > 0);
+            } return result;
+        } 
+        console.log(countPositive([1, -3, 5]));
     </script>
 </body>
 </html>
