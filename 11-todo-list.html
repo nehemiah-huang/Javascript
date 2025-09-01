@@ -6,11 +6,53 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div>
+        <p>Todo List</p>
+        <input class="inputTodo" placeholder="Todo name">
+        <button onclick="
+            addTodo();
+        ">Add</button>
+    </div>
+    <div class="js-todo-list">text</div>
 
 
+    <!--
+        Create an array to store todos ig
+        when we click on add;
+            Get text from the textbox
+            add it to the array
+            display the array in the console/page
+    -->
 
+    <script>
+        // I placed a src just because ill copy and paste all below in it later
+         const todoList = ['make dinner', 'youtube', 'maybe later'];
 
-    <script></script>
+        renderTodoList();
+        function renderTodoList() {       
+            let todoListHTML = '';
+
+            for (let i = 0; i < todoList.length; i++) {
+                const todo = todoList[i];
+                const html = `<p>${todo}</p>`;
+                todoListHTML += html;
+            }
+            console.log(todoListHTML);
+            document.querySelector('.js-todo-list')
+                .innerHTML = todoListHTML;
+        };
+        
+        function addTodo() {
+           const inputElement = document.querySelector('.inputTodo');
+           const name = inputElement.value;
+
+           todoList.push(name);
+           inputElement.value = ''; // reset the text in the textbox after adding with the button
+
+           console.log(todoList);
+           renderTodoList();
+        };
+        
+    </script>
 </body>
 </html>

@@ -9,9 +9,11 @@
     
 
     <script>
+        
+        /*
         const myArray = [1, 2, 3, 4, 5]; // the values are also known as index
         console.log(myArray);
-        
+
         // myArray[0] = 99;
 
         console.log(myArray.length);
@@ -25,7 +27,57 @@
         // the index and number of values to remove starting from index 0
 
         console.log(myArray);
+        */
+        /*
+        let i = 1;
+
+        while (i <= 5) { // if it results in false the loop will stop and move to next line
+            console.log(i);
+            // the loop ran 5 times due to the conditions, means 5 iterations
+            i++; // increment step, just to make sure the loop ends at a point.
+        }; // this is a while loop, literally while the parameters are true then it'll keep running
+
+        // for loop
+        for (let i = 1; i <= 5; i++) {
+            console.log(i);
+        };
         
+        // generating random numbers until one is at least 0.5, non-standard loop
+
+        let randomNumber = 0;
+        while (randomNumber < 0.5) {
+            randomNumber = Math.random();
+            console.log(randomNumber);
+        };
+
+        */
+        /*
+        const todoList = [
+            'make dinner',
+            'gooner alert',
+            'watch youtube'
+        ];
+        for (let i = 0; i <= 2; i++) {
+            const value = todoList[index];
+            console.log(value);
+        }; */
+
+        const nums = [1, 2, 3];
+        let total = 0;
+
+        for (let i = 0; i < nums.length; i++) {
+           const num = nums[i];
+           total += num;
+        };
+        console.log(total);
+
+        const numsDoubled = [];
+
+        for (let i = 0; i < nums.length; i++) {
+            const num = nums[i];
+            numsDoubled.push(num * 2);
+        };
+        console.log(numsDoubled);
     </script>
 </body>
 </html>
