@@ -108,14 +108,31 @@
         } 
         console.log(addArrays([1, 2, 3, 4, 5], [1, 2, 3, 4, 5])); */
 
-        //11k
+        //11k 
+        /*
         function countPositive(nums) {
             let result = [];
             for (let i = 0; i < nums.length; i++) {
-                result.push(nums[i] > 0);
+                if (nums[i] > 0) {
+                    result.push(nums[i]);
+                };
             } return result;
+        }; 
+        console.log(countPositive([1, -3, 5])); */
+
+        function minMax(nums) {
+            let result = [];
+            const highest = nums[0];
+            const lowest = nums[0];
+            for (let i = 0; i < nums.length; i++) {
+                if (nums[0] > highest) {
+                    highest = nums[i];
+                } else if (nums[0] < lowest) {
+                    lowest = nums[i];
+                } 
+            }
         } 
-        console.log(countPositive([1, -3, 5]));
+        
     </script>
 </body>
 </html>
