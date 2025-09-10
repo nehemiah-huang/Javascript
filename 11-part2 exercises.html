@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        const array1 = ['hola', 'searchs', 'maybe', 'search'];
+        let found = -1;
+
+        for (let i = 0; i < array1.length; i++) {
+            if (array1[i] === 'search') {
+                found = i;
+                break;
+            };
+        };
+        console.log(found);
+        */
+        /*
+        function findIndex(array, word) {
+            let result = -1;
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] === word) {
+                    result = 1;
+                    break;
+                };
+            };
+            return result;
+        };
+        console.log(findIndex(['green', 'red', 'blue', 'red', 'word'], 'blue')); */
+        /*
+        function removeEgg(foods) {
+            // To prevent modifying the original array, we
+            // can create a copy of the array using .slice()
+            const foodsCopy = foods.slice();
+            const reversedFoods = foodsCopy.reverse();
+
+            // Advanced technique:
+            // Since foods.slice() results in an array, we
+            // can also use .reverse() directly like this:
+            // foods.slice().reverse();
+            
+            // This technique is called "method chaining"
+            // because we use one method after another
+            // (like a chain of methods).
+            const result = [];
+            let eggsRemoved = 0;
+
+            for (let i = 0; i < reversedFoods.length; i++) {
+            if (reversedFoods[i] === 'egg' && eggsRemoved < 2) {
+                eggsRemoved++;
+                continue;
+            }
+
+            result.push(reversedFoods[i]);
+            }
+
+            return result.reverse();
+        };
+        const foods = ['egg', 'apple', 'egg', 'egg', 'ham'];
+        console.log(removeEgg(foods));
+        console.log(foods); */
+        
+
+        for (let i = 0; i <= 20; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                console.log('FizzBuzz');
+                continue;
+            } else if (i % 3 === 0) {
+                console.log('Fizz');
+                continue;
+            } else if (i % 5 === 0) {
+                console.log('Buzz');
+                continue;
+            } 
+            console.log(i);
+        }
+    </script>
+</body>
+</html>
