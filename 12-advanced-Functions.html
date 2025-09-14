@@ -3,11 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Advanced Functions</title>
 </head>
 <body>
     <script>
+        /*
+        function greeting() {
+            console.log("Hello");
+        }
+        greeting(); */
+        /*
+        const num = 2;
+        const function1 = function() {
+            console.log("hello2");
+        };
+        console.log(function1);
+        console.log(typeof function1);
         
+        const objects1 = {
+            num: 2,
+            fun: function greetings() {
+                console.log("hello3");
+            }
+        };
+        objects1.fun();
+
+        function display(param) {
+            console.log(param);
+        };
+        display(2); */
+
+        setTimeout(function() {
+            console.log('Timeout');
+        }, 3000); // async code because it'll run the next lines while waiting for this to run based on the conditions
+
+        console.log("hola");
+
+        setInterval(function(){
+            console.log('interval')
+        }, 3000);
     </script>
 </body>
 </html>
