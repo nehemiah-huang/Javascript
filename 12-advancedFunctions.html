@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Functions</title>
+</head>
+<body>
+    <script>
+        /*
+        // basic function
+        function greeting() {
+            console.log("hello1");
+        } greeting();
+
+        //saving a function inside a variable
+        const num = 2;
+        const function1 = function() {
+            console.log("hello2");
+        }
+        console.log(function1);
+        console.log(typeof function1);
+        function1();
+
+        // functions are values, can be saved in a variable, which also applies to objects
+        // A function saved in an object is a Method
+        const object1 = {
+            num: 2,
+            fun: function() {
+                console.log("Hello3");
+            }
+        }
+        object1.fun();
+
+        // Passing a value into a function
+        function display(param) {
+            console.log(param)
+        }
+        display(2); // takes the value and saves it in *param*
+
+        // passing a function into a function
+        function run(params) {
+            params();
+        }
+
+        // this is a callback function 
+        run(function() {
+            console.log("Hello4");
+        });     */
+
+        // this is asynchronous code, wont wait for this to finish before going to the next line.
+        // synchronous runs each line before the other, which is everything before this lesson.
+        setTimeout(function() {
+            console.log("Timeout Nigga!")
+        }, 3000) // this is in milliseconds btw
+        console.log('Next line');
+
+        setInterval(function() {
+            console.log("Interval")
+        }, 4000); // it will keep running every 4 seconds
+        console.log("next line 2");
+
+        // looping through an array
+        [
+            'make dinner hoe',
+            'watcch youtube sucker',
+            'wash dishes son'
+        ].forEach(function(value, index) {
+            
+            console.log(index, value)
+        })
+    </script>
+</body>
+</html>

@@ -74,14 +74,17 @@
     <p class="js-score score"></p>
 
     <button onclick="
-      score.wins = 0;
-      score.losses = 0;
-      score.ties = 0;
-      localStorage.removeItem('score');
-      updateScoreElement();
-    " class="reset-score-button">Reset Score</button>
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        localStorage.removeItem('score');
+        updateScoreElement();
+      " class="reset-score-button">Reset Score
+    </button>
+
     <button class="auto-play-button" onclick="
-    autoplay()">Auto Play</button>
+      autoplay()">Auto Play
+    </button>
 
     <script>
         let score = JSON.parse(localStorage.getItem('score')) || {
@@ -177,14 +180,14 @@ if (!score) {
         };
 
         let isAutoPlaying = false;
-
+        let IntervalID;
         function autoplay() {
           if (!isAutoPlaying) {
             IntervalID = setInterval(function(){
-            const playerMove = pickComputerMove;
+            const playerMove = pickComputerMove();
             playGame(playerMove);
 
-          }, 1000);
+          }, 500);
           isAutoPlaying = true;
           } else {
             clearInterval(IntervalID);
