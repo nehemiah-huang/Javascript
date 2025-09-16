@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="finished-button" onclick="changeButton()">
+        Start
+    </button><br><br>
+    <button class="add-button" onclick="addToCart()">
+        Add to Cart
+    </button>
+    <p class="addedText"></p>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <button class="add-document">Add</button>
+    <button class="remove-document">Remove</button>
+    <script>
+        /*
+        const add = function() {
+            console.log(2 + 3);
+        };
+        add();
+        add();
+
+        function runTwice(fun) {
+            fun();
+            fun();
+        }
+        runTwice(function() {
+            console.log('12b')
+        })
+        console.log(add());
+        runTwice(add)
+        
+        
+        function changeButton() {
+            const buttonElementFin = document.querySelector('.finished-button');
+
+            buttonElementFin.innerText = 'Loading...';
+
+            setTimeout(function(){
+                buttonElementFin.innerHTML = 'Finished!';
+            }, 1000) }
+        
+        let timeoutID;
+        function addToCart() {
+            const addToCart = document.querySelector('.addedText');
+            addToCart.innerHTML = 'Added!';
+            
+            clearTimeout(timeoutID);
+
+            timeoutID = setTimeout(function added(){
+                addToCart.innerHTML = '';
+            },2000)
+            
+        };
+        */
+       document.title = 'App';
+       let noMessages = 2;
+       setInterval(function(){
+        document.title = `(${noMessages}) New Messages`;
+       }, 1000);
+       
+       function notificationDocument() {
+        const addDocumentElement = document.querySelector('.add-document');
+        const removeDocumentElement = document.querySelector('.remove-document');
+       };
+    </script>
+</body>
+</html>

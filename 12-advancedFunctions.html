@@ -63,10 +63,13 @@
         // looping through an array
         [
             'make dinner hoe',
-            'watcch youtube sucker',
+            'watch youtube sucker',
             'wash dishes son'
         ].forEach(function(value, index) {
-            
+            if (value === 'watch youtube sucker') {
+                return;
+            }
+
             console.log(index, value)
         })
     </script>
