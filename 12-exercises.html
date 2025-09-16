@@ -19,8 +19,13 @@
     <br>
     <br>
 
-    <button class="add-document">Add</button>
-    <button class="remove-document">Remove</button>
+    <button class="add-document" onclick="
+    addNotification()">
+        Add
+    </button>
+    <button class="remove-document" onclick="removeNotification()">
+        Remove
+    </button>
     <script>
         /*
         const add = function() {
@@ -63,15 +68,42 @@
         };
         */
        document.title = 'App';
-       let noMessages = 2;
-       setInterval(function(){
-        document.title = `(${noMessages}) New Messages`;
-       }, 1000);
+       let noMessages = 0;
+       let timeoutID;
+
+
+      
        
-       function notificationDocument() {
-        const addDocumentElement = document.querySelector('.add-document');
-        const removeDocumentElement = document.querySelector('.remove-document');
+       function updateNotification() {
+        // const addDocumentElement = document.querySelector('.add-document');
+        // const removeDocumentElement = document.querySelector('.remove-document');
+
+        if (noMessages === 0) {
+            document.title = 'App';
+        } else if(noMessages > 0 ) {
+            document.title = `(${noMessages}) New Messages`;
+        } else if (noMessages < 0) {
+            document.title = 'App';
+        }
+
+        clearTimeout(timeoutID);
+
+        timeoutID = setTimeout(function(){
+            document.title = 'App';
+        }, 2000)
        };
+
+       function addNotification() {
+        noMessages++;
+        updateNotification();
+       }
+
+       function removeNotification() {
+        if (noMessages > 0 ) {
+            noMessages--;
+        }
+        updateNotification();
+       }
     </script>
 </body>
 </html>
