@@ -51,21 +51,18 @@
   </head>
   <body>
     <p class="title">Rock Paper Scissors</p>
-    <button onclick="
-      playGame('rock');
-    " class="move-button">
+
+    <button class="rock move-button">
       <img src="images/rock-emoji.png" class="move-icon">
     </button>
 
-    <button onclick="
-      playGame('paper');
-    " class="move-button">
+    <button class="paper move-button">
       <img src="images/paper-emoji.png" class="move-icon">
     </button>
 
     <button onclick="
       playGame('scissors');
-    " class="move-button">
+    " class="scissors move-button">
       <img src="images/scissors-emoji.png" class="move-icon">
     </button>
 
@@ -82,8 +79,7 @@
       " class="reset-score-button">Reset Score
     </button>
 
-    <button class="auto-play-button" onclick="
-      autoplay()">Auto Play
+    <button class="js auto-play-button">Auto Play
     </button>
 
     <script>
@@ -104,7 +100,25 @@ if (!score) {
   };
 }
 */
+      document.querySelector('.rock.move-button').addEventListener('click', () => {
+          playGame('rock');
+      });
+      document.querySelector('.scissors.move-button').addEventListener('click', () => {
+          playGame('scissors');
+      });
+      document.querySelector('.paper.move-button').addEventListener('click', () => {
+          playGame('paper');
+      });
+      document.body.addEventListener('keydown', (event) => {
+        if (event.key === 'r') {
+          playGame('rock'); 
+        } else if (event.key === 'p') {
+          playGame('paper');
+        } else if (event.key === 's') {
+          playGame('scissors')
+        }
 
+      });
       function playGame(playerMove) {
         const computerMove = pickComputerMove();
 
@@ -181,9 +195,11 @@ if (!score) {
 
         let isAutoPlaying = false;
         let IntervalID;
+
+        
         function autoplay() {
           if (!isAutoPlaying) {
-            IntervalID = setInterval(function(){
+            IntervalID = setInterval(() => {
             const playerMove = pickComputerMove();
             playGame(playerMove);
 
@@ -194,7 +210,9 @@ if (!score) {
             isAutoPlaying = false;
           }
 
-        }
+        };
+        
+
     </script>
   </body>
 </html>

@@ -6,7 +6,26 @@
     <title>Advanced Functions</title>
 </head>
 <body>
+    <button onclick="" class="js-button">
+        Click
+    </button>
     <script>
+        /*
+        const buttonElement = document.querySelector('.js-button');
+        // addEventListener(), practically an onclick, when interacting with an element
+
+        const eventListener = () => {
+            console.log('click');
+        };
+        
+        buttonElement.removeEventListener('click', eventListener); 
+
+        buttonElement.addEventListener('click', () => {
+            console.log('click2');
+        } ); */
+        // first param is the event on what we are listening for, like a click or button push
+        // second param is a function so use an arrow function
+
         /*
         // basic function
         function greeting() {
@@ -50,6 +69,7 @@
 
         // this is asynchronous code, wont wait for this to finish before going to the next line.
         // synchronous runs each line before the other, which is everything before this lesson.
+        /*
         setTimeout(function() {
             console.log("Timeout Nigga!")
         }, 3000) // this is in milliseconds btw
@@ -65,7 +85,7 @@
             'make dinner hoe',
             'watch youtube sucker',
             'wash dishes son'
-        ].forEach(function(value, index) {
+        ].forEach((value, index) => {
             if (value === 'watch youtube sucker') {
                 return;
             }
@@ -73,10 +93,44 @@
             console.log(index, value)
         });
 
-        const arrowFunction = () => {
+        const regularFunction = function(param, param2) {
+            console.log('Hola45');
+            return 5;
+        };
+        regularFunction();
+
+        const arrowFunction = (param, param2) => {
             console.log('Hello5');
+            return 5;
         }; // arrow functions work like normal functions
         arrowFunction();
+
+        const oneParam = param => {
+            console.log(param + 1);
+        }; // brackets for the parameter is optional when its just one parameter
+        oneParam(2);
+
+        const oneLine = () => 2 + 3; // curly brackets optional when everthing is on same line.
+        console.log(oneLine());
+
+        const object2 = {
+            method: () => {},
+            method: () {}
+        };
+        */
+
+       console.log( [2, -3, 5, 1].filter((value, index) => {
+            if (value >- 0) {
+                return true;
+            } else {
+                return false;
+            }
+            // return value >= 0;
+        })); //works the same as forEach to loop through an array
+
+        console.log([1, 2, 3, 4].map((value, index) => {
+            return value + 10;
+        })); //work like forEach and filter, transforms an array into another array
     </script>
 </body>
 </html>

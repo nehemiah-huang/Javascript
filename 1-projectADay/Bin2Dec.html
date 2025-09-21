@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Enter a binary Digit" id="Inputbox" required>
+    <p class="Result"></p>
+    <script>
+        let result;
+        const inputElement = document.querySelector('#Inputbox');
+        const resultElement = document.querySelector('.Result');
+
+        document.querySelector('#Inputbox').addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                result = convertToBinary(inputElement.value);
+
+                resultElement.innerHTML = `Conversion of ${inputElement.value} = ${result}`;
+            }
+        });
+        function convertToBinary(bstr) {
+            if (!/^[01]+$/.test(bstr)) {
+                return "Invalid input dummy.     Only 0s and 1s are allowed.";
+            } /*
+            That’s a regular expression (regex).
+            It’s basically a pattern that checks text. Here’s what each piece means:
+            ^ → start of the string
+            [01] → only allow 0 or 1
+            + → one or more of those characters (at least one digit must be there)
+            $ → end of the string
+            👉 So /^[01]+$/ means:
+            "The entire string must only contain 0s and 1s (no other characters)." */
+            return parseInt(bstr, 2);
+        }
+        
+    </script>
+</body>
+</html>
