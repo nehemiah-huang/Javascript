@@ -74,8 +74,7 @@ export function updateCartQuantity() {
   cart.forEach((cartItem) => {
       cartQuantity += cartItem.quantity;
   });
-  document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
-  
+  document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;  
 }
 function updateMessage(productId) {
   const addedMessage = document.querySelector(`.added-to-cart-${productId}`);
