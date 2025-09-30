@@ -1,7 +1,6 @@
 import {cart, removeFromCart} from '../data/cart.js';
 import { products } from '../data/products.js';
 import { formatCurrency } from './utils/money.js';
-import { updateCartQuantity } from './Scripts.js';
 
 let cartSummaryHTML = '';
 
@@ -112,5 +111,3 @@ document.querySelectorAll('.js-delete-link')
             container.remove();
         });
 });
-
-document.querySelector('.js-checkout-quantity').innerHTML = cartQuantity;

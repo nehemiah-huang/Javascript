@@ -37,11 +37,12 @@ export function addToCart(productId) {
   } else {
       cart.push({
       productId: productId,
-      quantity: 1
+      quantity: selectvalue
   });
   };
-
+  selectElement.value = '1';
   saveToStorage();
+  
 };
 
 export function removeFromCart(productId) {
@@ -60,4 +61,4 @@ function resetCart() {
   cart = [];
   localStorage.setItem('cart', JSON.stringify(cart));
 }
-resetCart();
+// resetCart();
