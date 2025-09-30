@@ -18,24 +18,29 @@ function saveToStorage() {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
+
 export function addToCart(productId) {
-    //saving matching item in a variable
-  let matchingItem;
+    const selectElement = document.querySelector(`.js-product-quantity-selector[data-product-id="${productId}"]`);
+    const selectvalue = Number(selectElement.value);
+
+    // saving matching item in a variable
+  let matchingItem = cart.find((cartItem) => cartItem.productId === productId); // One line arrow functions, refer to lesson 12-p2 if lost
 
   cart.forEach((cartItem) => {
-      if (productId === cartItem.productName) {
+      if (productId === cartItem.productId) {
           matchingItem = cartItem;
       }
   });
 
   if (matchingItem) {
-      matchingItem.quantity++;
+      matchingItem.quantity += selectvalue;
   } else {
       cart.push({
       productId: productId,
       quantity: 1
   });
   };
+
   saveToStorage();
 };
 
@@ -51,3 +56,8 @@ export function removeFromCart(productId) {
     cart = newCart;
     saveToStorage();
 }
+function resetCart() {
+  cart = [];
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+resetCart();
