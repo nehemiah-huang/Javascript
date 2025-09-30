@@ -62,3 +62,4 @@ function resetCart() {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 // resetCart();
+
