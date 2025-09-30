@@ -17,21 +17,28 @@
     <textarea id="csvInput" name="csvInput" rows="10" cols="50" placeholder="Paste your CSV data here" required></textarea>
     <br><br>
 
-    <button type="submit">Convert to JSON</button>
+    <button id="submitButton" type="submit">Convert to JSON</button>
+
+    <p id="outputArea"></p>
+    
   </form>
 
     <script>
         const fileName = document.querySelector('#filename'); 
-        const inputElement = document.querySelector('#Inputbox');
+        const inputElement = document.querySelector('#csvInput');
         const submitButton = document.querySelector('#submitButton');
+        const outputElement = document.querySelector('#outputArea');
+        const textarea = document.querySelector('.csvInput');
 
-
-        let text = document.querySelector('#Inputbox').val();
         function convertCSVtoJSON() {
+          submitButton.addEventListener('click', (event) => {
+            event.preventDefault();
+          })
+
             
         }
 
-        console.log(text)
+        console.log(text);
     </script>
 </body>
 </html>

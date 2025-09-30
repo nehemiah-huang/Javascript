@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="js-button">add</button><br><br>
+    <button class="js-addCart">Add To Cart</button>
+    <p class="added"></p>
+
+    <script>
+        let timeoutID;
+        let timer;
+
+        /*
+        let multiply = (a, b) => a * b;
+        console.log(multiply(2, 3));
+        console.log(multiply(7, 10));
+
+        function countPositive(nums) {
+            let count = 0;
+            nums.forEach((value) => {
+                if (value > 0) {
+                    count++;
+                }
+            });
+            return count;
+        };
+        console.log(countPositive([1, 2, 4, -3, -1, -120]));
+         
+        //12m
+        function addNum(array, num) {
+            return array.map((value) => value + num);
+        };
+        console.log(addNum([1, 2, 4, 5, 7], 2));
+
+        //12n
+        function removeEgg(foods) {
+           return foods.filter((food) => food !== 'egg');
+        };
+        console.log(removeEgg(['egg', 'ham', 'hammer']));
+
+        function removeNuts(testicle) {
+            let nuts = 1;
+            return testicle.filter((ball) => {
+                if (ball === 'nuts' && nuts < 2) {
+                    nuts++;
+                    return false;
+                }
+                return true;
+            });
+        };
+        console.log(removeNuts(['nuts', 'ball','nuts', 'nuts', 'scrotum']));
+        */
+
+        function updateButton() {
+            const updateButton = document.querySelector('.js-button');
+
+            updateButton.innerHTML = "Loading...";
+            setTimeout(() => {
+                updateButton.innerHTML = "Finished"
+            }, 1000);
+        };
+
+        function addToCart() {
+            const addToCart = document.querySelector('.js-addCart');
+            const addedP = document.querySelector('.added');
+
+            addToCart.innerHTML = "Added To Cart!";
+            clearTimeout(timer);
+
+            timer = setTimeout(() => {
+                addedP.innerText = '';
+                addToCart.innerHTML = "Add To Cart"
+            }, 2000);
+
+            if (addToCart.innerHTML === "Added To Cart!") {
+                addedP.innerText = "Added";
+                console.log("nuts");
+            } else {
+                return false;
+            }
+        };
+
+        document.title = 'App';
+        let notification = 99;
+
+        function updateNotification() {
+            if (notification === 0) {
+            document.title = 'App';
+        } else if(notification > 0 ) {
+            document.title = `(${notification}) New Messages`;
+        } else if (notification < 0) {
+            document.title = 'App';
+        }
+
+        clearTimeout(timeoutID);
+
+        timeoutID = setTimeout(() => {
+            document.title = 'App';
+        }, 2000)
+        };
+        updateNotification();
+
+        const multiply = (a, b) =>  a * b;
+
+        console.log(multiply(2, 3));
+        
+        function countPositive(nums) {
+            let count = 0;
+            nums.forEach((value) => {
+                if (value > 0) {
+                    count++;
+                }
+            });
+            return count;
+        };
+        console.log(countPositive([1, 2, 4, -3, -1, -120]));
+
+        document.querySelector('.js-button').addEventListener('click', () => {
+            updateButton();
+        });
+        document.querySelector('.js-addCart').addEventListener('click', () => {
+            addToCart();
+        });
+    </script>
+</body>
+</html>
