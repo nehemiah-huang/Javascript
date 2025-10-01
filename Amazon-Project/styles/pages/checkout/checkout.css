@@ -209,3 +209,18 @@
   margin-top: 11px;
   margin-bottom: 15px;
 }
+.quantity-input {
+  width: 30px;
+}
+.save-quantity-link {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, height 0.4s ease;
+}
+.link-primary {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+}

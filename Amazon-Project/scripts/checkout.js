@@ -37,13 +37,18 @@ cart.forEach((cartItem) => {
             <div class="product-price">
                 $${formatCurrency(matchingProduct.priceCents)}
             </div>
-            <div class="product-quantity">
+
+        <div class="product-quantity">
                 <span>
                 Quantity: <span class="quantity-label">${cartItem.quantity}</span>
                 </span>
-                <span class="update-quantity-link link-primary js-update-quantity-button-${matchingProduct.id}" data-product-id="${matchingProduct.id}">
+
+                <span class="update-quantity-link link-primary js-update-link" data-product-id="${matchingProduct.id}">
                 Update
                 </span>
+                <input class="quantity-input" data-product-id="${matchingProduct.id}" name="quantity-input">
+                <span class="save-quantity-link">Save</span>
+
                 <span class="delete-quantity-link link-primary
                 js-delete-link" data-product-id="${matchingProduct.id}">
                 Delete
@@ -118,9 +123,21 @@ document.querySelectorAll('.js-delete-link')
 });
 updateCartQuantity();
 
-document.querySelector('.js-update-quantity-button-${matchingProduct.id}').forEach((e) => {
-    e.addEventListener('click', () => {
-        const productId = e.dataset.productId;
-        removeFromCart(productId);
-    })
+
+document.querySelectorAll('.js-update-link').forEach((link) => {
+    link.addEventListener('click', () => {
+        const productId = link.dataset.productId;
+
+        console.log(productId);
+
+        const saveMessage = document.querySelector('.save-quantity-link');
+        if (!saveMessage) return;
+        saveMessage.classList.add('.link-primary');
+
+        setTimeout(() => {
+            saveMessage.classList.remove('.link-primary');
+            console.log('my nuts itch')
+        }, 2000);
+    });
 });
+
