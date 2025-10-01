@@ -1,9 +1,14 @@
 import {cart, removeFromCart, calculateCartQuantity} from '../data/cart.js';
 import { products } from '../data/products.js';
 import { formatCurrency } from './utils/money.js';
-
-
-
+import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
+import {hello} from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js';
+// without {} its a default export
+hello();
+// current date & time object, check their docs in dayjs online
+const today = dayjs();
+const deliveryDate = today.add(6, 'day');
+console.log(deliveryDate.format('dddd, MMM D, YYYY'));
 
 let cartSummaryHTML = '';
 
