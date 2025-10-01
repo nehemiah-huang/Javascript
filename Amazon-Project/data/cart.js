@@ -63,3 +63,12 @@ function resetCart() {
 }
 // resetCart();
 
+export function calculateCartQuantity() {
+  // this is for calculating total quantity
+  let cartQuantity = 0;
+  cart.forEach((cartItem) => {
+      cartQuantity += cartItem.quantity;
+  });
+  document.querySelector('.js-return-to-home-link').innerHTML = cartQuantity + ' Items';
+  return cartQuantity;
+}

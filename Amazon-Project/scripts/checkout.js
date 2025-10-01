@@ -1,7 +1,7 @@
-import {cart, removeFromCart} from '../data/cart.js';
+import {cart, removeFromCart, calculateCartQuantity} from '../data/cart.js';
 import { products } from '../data/products.js';
 import { formatCurrency } from './utils/money.js';
-import { updateCartQuantity } from './utils/cartQuantity.js';
+
 
 
 
@@ -47,7 +47,7 @@ cart.forEach((cartItem) => {
                 Update
                 </span>
                 <input class="quantity-input" data-product-id="${matchingProduct.id}" name="quantity-input">
-                <span class="save-quantity-link">Save</span>
+                <span class="save-quantity-link link-primary">Save</span>
 
                 <span class="delete-quantity-link link-primary
                 js-delete-link" data-product-id="${matchingProduct.id}">
@@ -118,26 +118,26 @@ document.querySelectorAll('.js-delete-link')
             const container = document.querySelector(`.js-cart-item-container-${productId}`);
             container.remove();
 
-            updateCartQuantity();
+            calculateCartQuantity();
         });
 });
-updateCartQuantity();
-
-
-document.querySelectorAll('.js-update-link').forEach((link) => {
+calculateCartQuantity();
+let updateMessage = document.querySelectorAll('.js-update-link');
+updateMessage.forEach((link) => {
     link.addEventListener('click', () => {
         const productId = link.dataset.productId;
 
         console.log(productId);
 
-        const saveMessage = document.querySelector('.save-quantity-link');
-        if (!saveMessage) return;
-        saveMessage.classList.add('.link-primary');
 
-        setTimeout(() => {
-            saveMessage.classList.remove('.link-primary');
-            console.log('my nuts itch')
-        }, 2000);
+        const container = document.querySelector(`.js-cart-item-container-${productId}`);
+        container.classList.add('is-editing-quantity');
+
+        if(link.innerHTML === 'Update') {
+            link.innerHTML = '';
+            console.log('Balls')
+        }
+
     });
 });
 

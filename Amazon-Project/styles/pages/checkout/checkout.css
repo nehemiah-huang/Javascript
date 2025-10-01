@@ -211,16 +211,15 @@
 }
 .quantity-input {
   width: 30px;
+  display: none;
 }
 .save-quantity-link {
-  opacity: 0;
-  visibility: hidden;
-  height: 0;
-  overflow: hidden;
-  transition: opacity 0.4s ease, height 0.4s ease;
+  display: none;
 }
-.link-primary {
-  opacity: 1;
-  visibility: visible;
-  height: auto;
+
+.is-editing-quantity .quantity-input, 
+.is-editing-quantity .save-quantity-link { display: initial; } 
+
+.is-editing-quantity .quantity-label {
+  display: none;
 }
