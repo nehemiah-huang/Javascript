@@ -22,7 +22,7 @@ cart.forEach((cartItem) => {
     });
 
     const deliveryOptionId = cartItem.deliveryOptionId;
-    
+
     let deliveryOption;
 
     deliveryOptions.forEach((option) => {
@@ -33,7 +33,7 @@ cart.forEach((cartItem) => {
 
     const today = dayjs();
     const deliveryDate = today.add(
-        deliveryOptions.deliveryDays, 'days'
+        deliveryOption.deliveryDays, 'days'
     );
     const dateString = deliveryDate.format('dddd, MMMM D');
     
