@@ -73,7 +73,6 @@ function updateCartQuantity() {
   const cartQuantity = calculateCartQuantity();
   document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
   
-  
   const displayCartQuantity = document.querySelector('.js-return-to-home-link');
   if (displayCartQuantity) {
     displayCartQuantity.innerHTML = `${cartQuantity} items`;
