@@ -79,3 +79,16 @@ export function calculateCartQuantity() {
   }
   return cartQuantity;
 }
+
+export function updateDeliveryOption(productId, deliveryOptionId) {
+    let matchingItem = cart.find((cartItem) => cartItem.productId === productId); // One line arrow functions, refer to lesson 12-p2 if lost
+
+    cart.forEach((cartItem) => {
+        if (productId === cartItem.productId) {
+            matchingItem = cartItem;
+        }
+    });
+
+    matchingItem.deliveryOptionId = deliveryOptionId;
+    saveToStorage();
+};
