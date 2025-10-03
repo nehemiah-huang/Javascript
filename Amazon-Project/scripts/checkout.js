@@ -6,6 +6,10 @@ import {deliveryOptions} from '../data/deliveryOptions.js';
 
 let cartSummaryHTML = '';
 
+function renderOrderSummary() {
+    
+}
+
 cart.forEach((cartItem) => {
     const productId = cartItem.productId;
 
@@ -74,8 +78,8 @@ cart.forEach((cartItem) => {
             <div class="delivery-options-title">
                 Choose a delivery option:
             </div>
+
             ${deliveryOptionHTML(matchingProduct, cartItem)}
-           
             </div>
         </div>
     </div>
@@ -134,6 +138,7 @@ document.querySelectorAll('.js-delete-link')
             calculateCartQuantity();
         });
 });
+
 calculateCartQuantity();
 let updateMessage = document.querySelectorAll('.js-update-link');
 updateMessage.forEach((link) => {
@@ -141,8 +146,6 @@ updateMessage.forEach((link) => {
         const productId = link.dataset.productId;
 
         console.log(productId);
-
-
         const container = document.querySelector(`.js-cart-item-container-${productId}`);
         container.classList.add('is-editing-quantity');
 
@@ -158,5 +161,5 @@ document.querySelectorAll('.js-delivery-option').forEach((element) => {
     element.addEventListener('click', () => {
         const {productId, deliveryOptionId} = element.dataset;
         updateDeliveryOption(productId, deliveryOptionId);
-    })
-})
+    });
+});
