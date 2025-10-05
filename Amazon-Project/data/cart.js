@@ -26,7 +26,7 @@ export function addToCart(productId) {
     const selectvalue = Number(selectElement.value);
 
     // saving matching item in a variable
-  let matchingItem = cart.find((cartItem) => cartItem.productId === productId); // One line arrow functions, refer to lesson 12-p2 if lost
+  let matchingItem; // One line arrow functions, refer to lesson 12-p2 if lost
 
   cart.forEach((cartItem) => {
       if (productId === cartItem.productId) {
@@ -81,7 +81,7 @@ export function calculateCartQuantity() {
 }
 
 export function updateDeliveryOption(productId, deliveryOptionId) {
-    let matchingItem = cart.find((cartItem) => cartItem.productId === productId); // One line arrow functions, refer to lesson 12-p2 if lost
+    let matchingItem; // One line arrow functions, refer to lesson 12-p2 if lost
 
     cart.forEach((cartItem) => {
         if (productId === cartItem.productId) {
